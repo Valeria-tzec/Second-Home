@@ -130,7 +130,7 @@ Se dividió el proyecto en dos fases:
 
 - **Diseño UI/UX y prototipado:** Figma (diseño de mockups y prototipos de pantallas)
 
-- **Control de versiones:** Github
+- **Control de versiones:** Git y Github
 
 - **Despliegue:** Github Pages
 
