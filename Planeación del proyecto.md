@@ -99,7 +99,8 @@ Se dividió el proyecto en dos fases:
 **Primera fase:**
 
 - Definir claramente quiénes utilizarán la plataforma: el estudiante vendedor (quien publica los muebles o electrodomésticos al terminar su estancia), el estudiante comprador (el recién llegado que busca equipar su habitación de forma económica) y el administrador (encargado de supervisar la comunidad).
-- Requerimientos funcionales: el registro exclusivo mediante correo institucional, la subida de anuncios con sus detalles, el sistema de filtros por zonas geográficas de Sevilla y categorías de productos, y la mensajería directa entre usuarios. 
+- Requerimientos funcionales: el registro exclusivo mediante correo institucional, la subida de anuncios con sus detalles, el sistema de filtros por zonas geográficas de Sevilla y categorías de productos, y la mensajería directa entre usuarios.
+- Requerimientos no funcionales: diseño responsivo adaptable (que la interfaz se adapte a cualquier dispositivo sin perder su funcionalidad), optimización y compresión de imágenes y usabilidad y accesibilidad.  
 - Restricciones: no se podrá pagar en línea ni envíos a domicilio. Todas las transacciones económicas y las entregas físicas se acordarán de forma directa y presencial entre los usuarios. Además, al operar con LocalStorage, la demostración del flujo multiusuario se realizará en un mismo navegador mediante perfiles precargados.
 - Creación de prototipos de logo, eslogan y mockups de las pantallas principales en Figma.
 - Inicio de la estructura de datos en formato JSON, definiendo qué datos guardará cada usuario, qué campos tendrá cada producto y el listado de categorías y zonas de Sevilla. 
@@ -148,7 +149,7 @@ Se entregará lo siguiente:
 
 - Un documento donde se definirá que usaremos HTML, CSS, JavaScript y LocalStorage.
 - La lista con los tipos de usuario (estudiante vendedor, comprador y administrador).
-- Los requerimientos funcionales claros y las restricciones (nada de pagos en línea, sin envíos a domicilio).
+- Los requerimientos funcionales y no funcionales claros y las restricciones (nada de pagos en línea, sin envíos a domicilio).
 - Los esquemas de la estructura de datos (qué guarda cada usuario, los campos de los productos y las zonas de Sevilla).
 - Los prototipos visuales en Figma, el logo, el eslogan y los bocetos de las pantallas principales.
 
