@@ -1,1 +1,62 @@
-// Registro e inicio de sesión institucional
+<!-- Registro e inicio de sesión institucional-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ingresar | SecondHome</title>
+    <link rel="stylesheet" href="CSS/base.css">
+    <link rel="stylesheet" href="CSS/base.css">
+    <link rel="stylesheet" href="CSS/base.css">
+    <link rel="stylesheet" href="CSS/base.css">
+</head>
+<body class="pagina-login">
+
+    <main class="login">
+        <img class="login__logo" src="img/logo.png" alt="Logo de SecondHome"
+        <form id="form-estudiante" class="login__form" novalidate>
+            <h1>Ingresa tu información</h1>
+
+            <label for="correo">Correo institucional</label>
+            <input id="correo" type="email" autocomplete="email" placeholder="nombre@alum.us.es"
+        required>
+
+        <label for="nombre">Nombre completo</label>
+        <input id="nombre" type="text" autocomplete="name" placeholder="Nombre completo" required>
+
+        <label class="login__recordar">
+            <input id="recordar" type="checkbox"> Recuerda mi información
+        </label>
+ 
+        <button type="submit" class="boton boton--principal">Ingresa a SecondHome</button>
+        <a href="#" data-alternar-login>Ingresar como administrador</a>
+    
+        <section class="login__demo">
+            <h2>Cuentas de prueba</h2>
+            <button type="button" class="boton boton--secundario" data-usuario="usr_01">Nicole (vendedora)</button>
+            <button type="button" class="boton boton--secundario" data-usuario="usr_02">Helena (compradora)</button>
+        </section>
+        </form>
+
+        <!--Administrador-->
+
+        <form id="form-admin" class="login__form" novalidate hidden>
+            <h1>Login administrador</h1>
+
+            <label for="correo-admin">Correo</label>
+            <input id="correo-admin" type="email" autocomplete="email" required>
+
+            <label for="password-admin">Correo</label>
+            <input id="password-admin" type="password" autocomplete="current-password" required>
+
+            <button type="submit" class="boton boton--principal">Ingresa a SecondHome</button>
+            <a href="#" data-alternar-login>Volver al ingreso de estudiante</a>
+        </form>
+    </main>
+
+    <script src="js/seedData.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>
