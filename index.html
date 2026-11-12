@@ -1,1 +1,31 @@
-// Catálogo principal y filtros
+<!-- !Catálogo principal y filtros -->
+
+<!doctype html>
+<html land="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SecondHome</title>
+    <link rel="stylesheet" href="CSS/base.css" />
+    <link rel="stylesheet" href="CSS/componentes.css" />
+    <link rel="stylesheet" href="CSS/paginas/catalogo.css" />
+  </head>
+  <body>
+    <h1>SecondHome</h1>
+    <p id="saludo"></p>
+
+    <script src="js/seedData.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/auth.js"></script>
+
+    <script>
+      inicializarDatos();
+      const usuario = requerirSesion();
+      if (usuario) {
+        document.getElementById("saludo").textContent =
+          "Hola, " + usuario.nombre;
+      }
+    </script>
+  </body>
+</html>
