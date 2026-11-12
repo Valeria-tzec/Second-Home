@@ -92,3 +92,13 @@ function obtenerUsuarioPorId(id) {
 function obtenerProductoPorId(id) {
   return obtenerProductos().find((producto) => producto.id === id);
 }
+
+function obtenerUsuarioActivo() {
+  return obtenerUsuarioPorId(leer(CLAVES.sesion, null));
+}
+function establecerUsuarioActivo(id) {
+  return guardar(CLAVES.sesion, id);
+}
+function cerrarSesion() {
+  localStorage.removeItem(CLAVES.sesion);
+}
