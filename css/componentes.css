@@ -1,0 +1,52 @@
+:root {
+  --azul: #1a3bc4;
+  --naranja: #ff6347;
+  --gris-campo: #f3f3f5;
+  --texto: #1c1c1e;
+}
+
+.boton {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  border: 0;
+  border-radius: 999px;
+  font:
+    600 1rem/1 system-ui,
+    sans-serif;
+  cursor: pointer;
+}
+.boton--principal {
+  background: var(--naranja);
+  color: #fff;
+}
+.boton--secundario {
+  background: #fff;
+  color: var(--azul);
+  border: 2px solid var(--azul);
+}
+
+/*Avisos emergentes*/
+#notificaciones {
+  position: fixed;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(92vw, 420px);
+  display: grid;
+  gap: 0.5rem;
+  z-index: 1000;
+}
+.notificacion {
+  padding: 0.9rem 1rem;
+  border-radius: 0.75rem;
+  color: #fff;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+.notificacion.exito {
+  background: #1f9d55;
+}
+.notificacion.error {
+  background: #d93025;
+}

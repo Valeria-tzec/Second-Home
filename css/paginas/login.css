@@ -1,0 +1,76 @@
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  color: var(--texto);
+}
+
+.login {
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+.login__logo {
+  display: block;
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 1rem;
+  object-fit: contain;
+}
+.login__form {
+  display: grid;
+  gap: 0.75rem;
+}
+.login__form[hidden] {
+  display: none;
+} /* para que "hidden" gane a display:grid */
+.login__form h1 {
+  color: var(--azul);
+  text-align: center;
+}
+.login__form label {
+  font-weight: 600;
+}
+.login__form input[type="email"],
+.login__form input[type="text"],
+.login__form input[type="password"] {
+  padding: 1rem;
+  border: 1px solid #e2e2e6;
+  border-radius: 0.75rem;
+  background: var(--gris-campo);
+  font-size: 1rem;
+}
+.login__recordar {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  font-weight: 400;
+}
+.login__form a {
+  text-align: center;
+  color: var(--azul);
+}
+.login__demo {
+  display: grid;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e2e2e6;
+}
+.login__demo h2 {
+  font-size: 1rem;
+  text-align: center;
+  margin: 0;
+}
+
+/* Login de administrador: fondo azul como en el mockup */
+body.pagina-login:has(#form-admin:not([hidden])) {
+  background: var(--azul);
+}
+body.pagina-login:has(#form-admin:not([hidden])) .login__form h1,
+body.pagina-login:has(#form-admin:not([hidden])) .login__form label,
+body.pagina-login:has(#form-admin:not([hidden])) .login__form a {
+  color: #fff;
+}
