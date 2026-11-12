@@ -57,3 +57,38 @@ function reiniciarDatos() {
   Object.values(CLAVES).forEach((c) => localStorage.removeItem(c));
   inicializarDatos();
 }
+
+function obtenerCatalogos() {
+  return leer(CLAVES.catalogos, CATALOGOS_SEMILLA);
+}
+
+//usuarios
+function obtenerUsuarios() {
+  return leer(CLAVES.usuarios, []);
+}
+function guardarUsuarios(lista) {
+  return guardar(CLAVES.usuarios, lista);
+}
+
+//productos
+function obtenerProductos() {
+  return leer(CLAVES.productos, []);
+}
+function guardarProductos(lista) {
+  return guardar(CLAVES.productos, lista);
+}
+
+//mensajes
+function obtenerMensajes() {
+  return leer(CLAVES.mensajes, []);
+}
+function guardarMensajes(lista) {
+  return guardar(CLAVES.mensajes, lista);
+}
+
+function obtenerUsuarioPorId(id) {
+  return obtenerUsuarios().find((usuario) => usuario.id === id);
+}
+function obtenerProductoPorId(id) {
+  return obtenerProductos().find((producto) => producto.id === id);
+}
