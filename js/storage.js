@@ -38,3 +38,22 @@ function generarId(prefijo) {
     Math.random().toString(36).slice(2, 6)
   );
 }
+
+// Inicialización
+// copia la semilla solo la primera vez
+function inicializarDatos() {
+  if (leer(CLAVES.iniciado, false)) return;
+  guardar(CLAVES.catalogos, CATALOGOS_SEMILLA);
+  guardar(CLAVES.catalogos, USUARIOS_SEMILLA);
+  guardar(CLAVES.catalogos, PRODUCTOS_SEMILLA);
+  guardar(CLAVES.catalogos, MENSAJES_SEMILLA);
+
+  // no se guarda sesión aquí, nadie está logueado hasta que pase por login.html
+  guardar(CLAVES.iniciado, true);
+}
+
+//esto solo borra lo de SecondHome, no localStorage.clear()
+function reiniciarDatos() {
+  Object.values(CLAVES).forEach((c) => localStorage.removeItem(c));
+  inicializarDatos();
+}
