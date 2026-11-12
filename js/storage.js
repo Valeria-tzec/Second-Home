@@ -87,10 +87,10 @@ function guardarMensajes(lista) {
 }
 
 function obtenerUsuarioPorId(id) {
-  return obtenerUsuarios().find((usuario) => usuario.id === id);
+  return obtenerUsuarios().find((u) => u.id === id);
 }
 function obtenerProductoPorId(id) {
-  return obtenerProductos().find((producto) => producto.id === id);
+  return obtenerProductos().find((p) => p.id === id);
 }
 
 function obtenerUsuarioActivo() {
