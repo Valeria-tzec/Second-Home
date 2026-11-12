@@ -105,7 +105,7 @@ if (formEstudiante) {
   const inpurNombre = document.getElementById("nombre");
   const checkRecordar = document.getElementById("recordar");
 
-  const recordado = ObtenerRecordado();
+  const recordado = obtenerRecordado();
   if (recordado) {
     inputCorreo.value = recordado.correo;
     inputNombre.value = recordado.nombre;

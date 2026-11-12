@@ -2,17 +2,17 @@
 
 const CLAVES = {
   catalogos: "sh_catalogos",
-  catalogos: "sh_usuarios",
-  catalogos: "sh_productos",
-  catalogos: "sh_mensajes",
-  catalogos: "sh_sesion",
-  catalogos: "sh_recordar",
-  catalogos: "sh_iniciado",
+  usuaios: "sh_usuarios",
+  productos: "sh_productos",
+  mensajes: "sh_mensajes",
+  sesion: "sh_sesion",
+  recordar: "sh_recordar",
+  iniciado: "sh_iniciado",
 };
 
 function leer(clave, valorPorDefecto) {
   try {
-    const text = localStorage.getItem(clave);
+    const texto = localStorage.getItem(clave);
     return texto === null ? valorPorDefecto : JSON.parse(texto);
   } catch (error) {
     console.error("Error leyendo", clave, error);
