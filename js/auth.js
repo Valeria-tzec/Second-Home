@@ -2,12 +2,10 @@
 const REGEX_CORREO = /^[^\s@]+@([^\s@]+\.)+[^\s@]+$/;
 
 function esCorreoInstitucional(correo) {
-  if (!REGEX_CORREO.test(correo)) {
-    return false;
-  }
-  const dominio = correo.split("@")[1].toLoweCase();
+  if (!REGEX_CORREO.test(correo)) return false;
+  const dominio = correo.split("@")[1].toLowerCase();
   return obtenerCatalogos().dominiosPermitidos.some(
-    (dom) => dominio === dom || dominio.endsWith("." + dom),
+    (d) => dominio === d || dominio.endsWith("." + d),
   );
 }
 
