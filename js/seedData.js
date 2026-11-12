@@ -1,1 +1,175 @@
 // Datos iniciales de prueba para poblar LocalStorage
+
+function fechaEnDias(dias) {
+  const f = new Date();
+  f.setDate(f.getDate() + dias);
+  return f.toISOString().slice(0, 10);
+}
+
+const CATALOGOS_SEMILLA = {
+  zonasSevilla: [
+    "Nervión",
+    "Reina Mercedes",
+    "Triana",
+    "Macarena",
+    "Centro",
+    "Los Remedios",
+    "Cartuja",
+  ],
+  categorias: ["Muebles", "Electrónica", "Cocina", "Ropa de cama"],
+  etiquetas: [
+    "Disponible hasta fecha",
+    "Pack de mudanza completo",
+    "Donación/Regalo",
+  ],
+  estados: ["Disponible", "Vendido"],
+  dominiosPermitidos: [
+    "alum.us.es",
+    "us.es",
+    "alu.upo.es",
+    "upo.es",
+    "secondhome.es",
+  ],
+};
+
+const USUARIOS_SEMILLA = [
+  {
+    id: "usr_01",
+    nombre: "Nicole Perez",
+    correo: "nicole@alum.us.es",
+    password: "demo123",
+    universidad: "Universidad de Sevilla",
+    periodoIntercambio: "1 semestre",
+    zonaPreferida: "Reina Mercedes",
+    rol: "estudiante",
+  },
+  {
+    id: "usr_02",
+    nombre: "Helena Gómez",
+    correo: "helena@alu.upo.es",
+    password: "demo123",
+    universidad: "Universidad Pablo de Olavide",
+    periodoIntercambio: "1 semestre",
+    zonaPreferida: "Nervión",
+    rol: "estudiante",
+  },
+  {
+    id: "usr_admin",
+    nombre: "Admin de Second Home",
+    correo: "admin@secondhome.es",
+    password: "demo123",
+    universidad: "Equipo Gestor de SecondHome",
+    periodoIntercambio: "N/A",
+    zonaPreferida: "Centro",
+    rol: "administrador",
+  },
+];
+
+const PRODUCTOS_SEMILLA = [
+  {
+    id: "prod_101",
+    vendedorId: "usr_01",
+    titulo: "Escritorio y silla ergonómica",
+    descripcion: "En perfecto estado, los usé solo un cuatrimestre.",
+    precio: 25,
+    categoria: "Muebles",
+    zona: "Reina Mercedes",
+    etiquetaModalidad: "Pack de mudanza completo",
+    disponibleHasta: fechaEnDias(38),
+    estado: "Disponible",
+    imagen: "img/placeholder.svg",
+    fechaCreacion: fechaEnDias(-5),
+  },
+  {
+    id: "prod_102",
+    vendedorId: "usr_01",
+    titulo: "Pack de cocina completo",
+    descripcion:
+      "Ollas, sartenes, platos, vasos y cubiertos para dos personas.",
+    precio: 30,
+    categoria: "Cocina",
+    zona: "Reina Mercedes",
+    etiquetaModalidad: "Pack de mudanza completo",
+    disponibleHasta: fechaEnDias(20),
+    estado: "Disponible",
+    imagen: "img/placeholder.svg",
+    fechaCreacion: fechaEnDias(-3),
+  },
+  {
+    id: "prod_103",
+    vendedorId: "usr_01",
+    titulo: "Ventilador de pie",
+    descripcion: "Funciona perfecto. Me voy y lo regalo a quien lo necesite.",
+    precio: 0,
+    categoria: "Electrónica",
+    zona: "Triana",
+    etiquetaModalidad: "Donación/Regalo",
+    disponibleHasta: fechaEnDias(10),
+    estado: "Disponible",
+    imagen: "img/placeholder.svg",
+    fechaCreacion: fechaEnDias(-1),
+  },
+  {
+    id: "prod_104",
+    vendedorId: "usr_02",
+    titulo: "Edredón y sábanas (cama 90)",
+    descripcion: "Lavados y listos para usar. Sirven para cama individual.",
+    precio: 15,
+    categoria: "Ropa de cama",
+    zona: "Nervión",
+    etiquetaModalidad: "Disponible hasta fecha",
+    disponibleHasta: fechaEnDias(45),
+    estado: "Disponible",
+    imagen: "img/placeholder.svg",
+    fechaCreacion: fechaEnDias(-10),
+  },
+  {
+    id: "prod_105",
+    vendedorId: "usr_02",
+    titulo: "Microondas 800W",
+    descripcion: "Pequeño, perfecto para un piso de estudiantes.",
+    precio: 30,
+    categoria: "Cocina",
+    zona: "Nervión",
+    etiquetaModalidad: "Disponible hasta fecha",
+    disponibleHasta: fechaEnDias(15),
+    estado: "Vendido",
+    imagen: "img/placeholder.svg",
+    fechaCreacion: fechaEnDias(-12),
+  },
+  {
+    id: "prod_106",
+    vendedorId: "usr_02",
+    titulo: "Lámpara de escritorio LED",
+    descripcion: "Brazo flexible y tres niveles de luz.",
+    precio: 8,
+    categoria: "Electrónica",
+    zona: "Centro",
+    etiquetaModalidad: "Disponible hasta fecha",
+    disponibleHasta: fechaEnDias(25),
+    estado: "Disponible",
+    imagen: "img/placeholder.svg",
+    fechaCreacion: fechaEnDias(-2),
+  },
+];
+
+const MENSAJES_SEMILLA = [
+  {
+    id: "msg_501",
+    productoId: "prod_101",
+    compradorId: "usr_02",
+    vendedorId: "usr_01",
+    emisorId: "usr_02",
+    texto: "¡Hola! ¿Sigue disponible para recoger mañana en Reina Mercedes?",
+    fechaHora: new Date(Date.now() - 3600000).toISOString(),
+  },
+  {
+    id: "msg_502",
+    productoId: "prod_101",
+    compradorId: "usr_02",
+    vendedorId: "usr_01",
+    emisorId: "usr_01",
+    texto: "¡Hola Helena! Sí, claro. ¿A las 18:00 te va bien?",
+    fechaHora: new Date(Date.now() - 1800000).toISOString(),
+  },
+];
