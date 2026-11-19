@@ -2,7 +2,7 @@
 
 const CLAVES = {
   catalogos: "sh_catalogos",
-  usuaios: "sh_usuarios",
+  usuarios: "sh_usuarios",
   productos: "sh_productos",
   mensajes: "sh_mensajes",
   sesion: "sh_sesion",
@@ -44,9 +44,9 @@ function generarId(prefijo) {
 function inicializarDatos() {
   if (leer(CLAVES.iniciado, false)) return;
   guardar(CLAVES.catalogos, CATALOGOS_SEMILLA);
-  guardar(CLAVES.catalogos, USUARIOS_SEMILLA);
-  guardar(CLAVES.catalogos, PRODUCTOS_SEMILLA);
-  guardar(CLAVES.catalogos, MENSAJES_SEMILLA);
+  guardar(CLAVES.usuarios, USUARIOS_SEMILLA);
+  guardar(CLAVES.productos, PRODUCTOS_SEMILLA);
+  guardar(CLAVES.mensajes, MENSAJES_SEMILLA);
 
   // no se guarda sesión aquí, nadie está logueado hasta que pase por login.html
   guardar(CLAVES.iniciado, true);
