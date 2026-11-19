@@ -2,6 +2,7 @@ body {
   margin: 0;
   font-family: system-ui, sans-serif;
   color: var(--texto);
+  background: #f9f3ee;
 }
 
 .login {
@@ -72,5 +73,5 @@ body.pagina-login:has(#form-admin:not([hidden])) {
 body.pagina-login:has(#form-admin:not([hidden])) .login__form h1,
 body.pagina-login:has(#form-admin:not([hidden])) .login__form label,
 body.pagina-login:has(#form-admin:not([hidden])) .login__form a {
-  color: #f9f3ee;
+  color: #ffffff;
 }
