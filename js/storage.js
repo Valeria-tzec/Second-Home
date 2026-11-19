@@ -129,7 +129,13 @@ function eliminarProducto(id) {
 //estado de producto
 function cambiarEstadoProducto(productoId, nuevoEstado, usuarioId) {
   const producto = obtenerProductoPorId(productoId);
+
   const usuario = obtenerUsuarioPorId(usuarioId);
+
+  if (!producto || usuario) return false;
+
+  const esDueno = producto.vendedorId === usuario.id;
+  const esAdmin = usuario.rol === "administrador";
   if (!esDueno && !esAdmin) return false;
 
   if (!obtenerCatalogos().estados.includes(nuevoEstado)) return false;

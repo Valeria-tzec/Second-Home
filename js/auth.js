@@ -100,7 +100,7 @@ if (formEstudiante) {
 
   const formAdmin = document.getElementById("form-admin");
   const inputCorreo = document.getElementById("correo");
-  const inpurNombre = document.getElementById("nombre");
+  const inputNombre = document.getElementById("nombre");
   const checkRecordar = document.getElementById("recordar");
 
   const recordado = obtenerRecordado();
@@ -139,7 +139,7 @@ if (formEstudiante) {
     window.location.href = "index.html";
   });
 
-  document.querySelectorAll("[data-alternar-login").forEach((enlace) => {
+  document.querySelectorAll("[data-alternar-login]").forEach((enlace) => {
     enlace.addEventListener("click", (evento) => {
       evento.preventDefault();
       formEstudiante.hidden = !formEstudiante.hidden;
