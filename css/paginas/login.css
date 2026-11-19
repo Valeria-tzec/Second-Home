@@ -2,7 +2,7 @@ body {
   margin: 0;
   font-family: system-ui, sans-serif;
   color: var(--texto);
-  background: #f9f3ee;
+  background: #ffffff;
 }
 
 .login {
