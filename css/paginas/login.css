@@ -72,5 +72,5 @@ body.pagina-login:has(#form-admin:not([hidden])) {
 body.pagina-login:has(#form-admin:not([hidden])) .login__form h1,
 body.pagina-login:has(#form-admin:not([hidden])) .login__form label,
 body.pagina-login:has(#form-admin:not([hidden])) .login__form a {
-  color: #fff;
+  color: #f9f3ee;
 }
