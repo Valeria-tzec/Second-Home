@@ -2,12 +2,10 @@
 const REGEX_CORREO = /^[^\s@]+@([^\s@]+\.)+[^\s@]+$/;
 
 function esCorreoInstitucional(correo) {
-  if (!REGEX_CORREO.test(correo)) {
-    return false;
-  }
-  const dominio = correo.split("@")[1].toLoweCase();
+  if (!REGEX_CORREO.test(correo)) return false;
+  const dominio = correo.split("@")[1].toLowerCase();
   return obtenerCatalogos().dominiosPermitidos.some(
-    (dom) => dominio === dom || dominio.endsWith("." + dom),
+    (d) => dominio === d || dominio.endsWith("." + d),
   );
 }
 
@@ -102,10 +100,10 @@ if (formEstudiante) {
 
   const formAdmin = document.getElementById("form-admin");
   const inputCorreo = document.getElementById("correo");
-  const inpurNombre = document.getElementById("nombre");
+  const inputNombre = document.getElementById("nombre");
   const checkRecordar = document.getElementById("recordar");
 
-  const recordado = ObtenerRecordado();
+  const recordado = obtenerRecordado();
   if (recordado) {
     inputCorreo.value = recordado.correo;
     inputNombre.value = recordado.nombre;
@@ -141,7 +139,7 @@ if (formEstudiante) {
     window.location.href = "index.html";
   });
 
-  document.querySelectorAll("[data-alternar-login").forEach((enlace) => {
+  document.querySelectorAll("[data-alternar-login]").forEach((enlace) => {
     enlace.addEventListener("click", (evento) => {
       evento.preventDefault();
       formEstudiante.hidden = !formEstudiante.hidden;

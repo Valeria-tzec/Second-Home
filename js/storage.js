@@ -2,17 +2,17 @@
 
 const CLAVES = {
   catalogos: "sh_catalogos",
-  catalogos: "sh_usuarios",
-  catalogos: "sh_productos",
-  catalogos: "sh_mensajes",
-  catalogos: "sh_sesion",
-  catalogos: "sh_recordar",
-  catalogos: "sh_iniciado",
+  usuarios: "sh_usuarios",
+  productos: "sh_productos",
+  mensajes: "sh_mensajes",
+  sesion: "sh_sesion",
+  recordar: "sh_recordar",
+  iniciado: "sh_iniciado",
 };
 
 function leer(clave, valorPorDefecto) {
   try {
-    const text = localStorage.getItem(clave);
+    const texto = localStorage.getItem(clave);
     return texto === null ? valorPorDefecto : JSON.parse(texto);
   } catch (error) {
     console.error("Error leyendo", clave, error);
@@ -44,9 +44,9 @@ function generarId(prefijo) {
 function inicializarDatos() {
   if (leer(CLAVES.iniciado, false)) return;
   guardar(CLAVES.catalogos, CATALOGOS_SEMILLA);
-  guardar(CLAVES.catalogos, USUARIOS_SEMILLA);
-  guardar(CLAVES.catalogos, PRODUCTOS_SEMILLA);
-  guardar(CLAVES.catalogos, MENSAJES_SEMILLA);
+  guardar(CLAVES.usuarios, USUARIOS_SEMILLA);
+  guardar(CLAVES.productos, PRODUCTOS_SEMILLA);
+  guardar(CLAVES.mensajes, MENSAJES_SEMILLA);
 
   // no se guarda sesión aquí, nadie está logueado hasta que pase por login.html
   guardar(CLAVES.iniciado, true);
@@ -129,7 +129,13 @@ function eliminarProducto(id) {
 //estado de producto
 function cambiarEstadoProducto(productoId, nuevoEstado, usuarioId) {
   const producto = obtenerProductoPorId(productoId);
+
   const usuario = obtenerUsuarioPorId(usuarioId);
+
+  if (!producto || usuario) return false;
+
+  const esDueno = producto.vendedorId === usuario.id;
+  const esAdmin = usuario.rol === "administrador";
   if (!esDueno && !esAdmin) return false;
 
   if (!obtenerCatalogos().estados.includes(nuevoEstado)) return false;
